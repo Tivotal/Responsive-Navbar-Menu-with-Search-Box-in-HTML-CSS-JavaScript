@@ -1,0 +1,247 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+nav {
+  background: #171c24;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 100px;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -1px;
+}
+
+nav .nav-items {
+  display: flex;
+  flex: 1;
+  padding: 0 0 0 40px;
+}
+
+nav .nav-items li {
+  padding: 0 15px;
+}
+
+nav .nav-items li a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+nav .nav-items li a:hover {
+  color: #4070f4;
+}
+
+nav form {
+  display: flex;
+  height: 40px;
+  padding: 2px;
+  background: #1e232b;
+  min-width: 18% !important;
+  border-radius: 10px;
+  border: 1px solid rgba(155, 155, 155, 0.2);
+}
+
+nav form .search-input {
+  height: 100%;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 17px;
+}
+
+nav form button {
+  padding: 0 15px;
+  border: none;
+  background: #4070f4;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+nav form button:hover {
+  background: #12338f;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.content .text,
+.content header {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.content .text {
+  color: #4070f4;
+}
+
+.content .space {
+  margin: 10px 0;
+}
+
+nav .menu-icon,
+nav .search-icon,
+nav .cancel-icon {
+  width: 40px;
+  text-align: center;
+  color: #fff;
+  margin: 0 50px;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 1245px) {
+  nav {
+    padding: 0 50px;
+  }
+}
+
+@media (max-width: 1140px) {
+  nav {
+    padding: 0;
+  }
+
+  nav .logo {
+    flex: 2;
+    text-align: center;
+  }
+
+  nav .nav-items {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    width: 100%;
+    height: 100%;
+    padding: 10px 50px 0 50px;
+    text-align: center;
+    background: #14181f;
+    display: inline-block;
+    z-index: 99;
+    transition: left 0.3s ease;
+  }
+
+  nav .nav-items.active {
+    left: 0;
+  }
+
+  nav .menu-icon span.hide {
+    display: none;
+  }
+
+  nav .search-icon.hide {
+    display: none;
+  }
+
+  nav .cancel-icon.show {
+    display: block;
+  }
+
+  nav .nav-items li {
+    line-height: 40px;
+    margin: 30px 0;
+  }
+
+  nav .nav-items li a {
+    font-size: 20px;
+  }
+
+  nav .search-icon,
+  nav .menu-icon {
+    display: block;
+  }
+
+  nav form {
+    position: absolute;
+    top: 80px;
+    right: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: top 0.3s ease, opacity 0.1s ease;
+  }
+
+  nav form.active {
+    opacity: 1;
+    top: 95px;
+  }
+
+  nav form::after {
+    position: absolute;
+    content: "";
+    height: 60px;
+    padding: 2px;
+    background: #1e232b;
+    border-radius: 10px;
+    min-width: calc(100% + 20px);
+    z-index: -2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  nav form::before {
+    position: absolute;
+    content: "";
+    top: -13px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    z-index: -1;
+    border-bottom-color: #1e232b;
+    margin: -20px 0 0;
+  }
+}
+
+@media (max-width: 980px) {
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon {
+    margin: 0 20px;
+  }
+
+  nav form {
+    right: 30px;
+  }
+}
+
+@media (max-width: 350px) {
+  nav .menu-icon,
+  nav .cancel-icon,
+  nav .search-icon {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
